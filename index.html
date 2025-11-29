@@ -544,134 +544,91 @@
         - #MENU
       -->
 
-      <section class="section menu" aria-label="menu-label" id="menu">
+      <section class="section menu-section bg-black-10" id="menu">
         <div class="container">
-      
-          <p class="section-subtitle text-center label-2">Nawabi Specialties</p>
-          <h2 class="headline-1 section-title text-center">Our Signature Main Course</h2>
-      
-          <ul class="grid-list">
-      
-            <!-- Nawabi Butter Chicken -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="./assets/images/ChatGPT Image Nov 16, 2025, 11_54_33 PM.png" width="140" height="140" loading="lazy" alt="Nawabi Butter Chicken" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Butter Chicken</a></h3>
-                    <span class="span title-2">₹149 / ₹279</span>
-                  </div>
-                  <p class="card-text label-1">
-                    Tender chicken cooked in a rich and buttery tomato gravy infused with royal Nawabi flavors.
-                  </p>
+          <p class="section-subtitle label-2">Explore Our Menu</p>
+          <h2 class="headline-1 section-title text-center">Interactive Menu</h2>
+          
+          <div class="menu-wrapper">
+            <!-- Hero Section -->
+            <div class="menu-hero">
+              <div class="menu-brand">
+                <h2 class="headline-2">Nawabi Lazzat</h2>
+                <p class="body-2">Discover our authentic Mughlai & Indian cuisine</p>
+              </div>
+        
+              <div class="menu-controls">
+                <button class="btn btn-secondary menu-btn" id="startBtn" onclick="startMenu()">
+                  <span class="text text-1">Explore Menu</span>
+                  <span class="text text-2" aria-hidden="true">Explore Menu</span>
+                </button>
+                
+                <div class="pdf-buttons">
+                  <a href="#menunav" class="open-pdf" onclick="selectType('nonveg')">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    <span>Non-Veg Menu</span>
+                  </a>
+                  <a href="#menunav" class="open-pdf" onclick="selectType('veg')">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    <span>Veg Menu</span>
+                  </a>
                 </div>
               </div>
-            </li>
-      
-            <!-- Nawabi Chicken Biryani -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="./assets/images/ChatGPT Image Nov 16, 2025, 11_54_36 PM.png" width="140" height="140" loading="lazy" alt="Nawabi Chicken Biryani" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Chicken Biryani</a></h3>
-                    <span class="span title-2">₹269 / ₹499</span>
+            </div>
+        
+            <!-- Menu Content Area -->
+            <div class="menu-content-area">
+              <!-- Left Sidebar -->
+              <div class="menu-sidebar panel" id="leftPanel">
+                <div class="sidebar-header">
+                  <h3 class="title-3" id="menunav">Select Menu Type</h3>
+                  <div class="separator"></div>
+                </div>
+        
+                <div class="menu-type-buttons">
+                  <button class="menu-type-btn" id="vegBtn" onclick="selectType('veg')">
+                    <ion-icon name="leaf-outline"></ion-icon>
+                    <span>Vegetarian</span>
+                  </button>
+                  <button class="menu-type-btn" id="nonvegBtn" onclick="selectType('nonveg')">
+                    <ion-icon name="restaurant-outline"></ion-icon>
+                    <span>Non-Vegetarian</span>
+                  </button>
+                </div>
+        
+                <div class="sidebar-info muted">
+                  <ion-icon name="information-circle-outline"></ion-icon>
+                  <p>Select a menu type to view categories, then choose a category to explore all items with prices.</p>
+                </div>
+        
+                <div class="categories-section">
+                  <div class="categories-header">
+                    <ion-icon name="grid-outline"></ion-icon>
+                    <span class="label-2">Categories</span>
                   </div>
-                  <p class="card-text label-1">
-                    Aromatic basmati rice layered with juicy chicken and slow-cooked using authentic Nawabi dum techniques.
-                  </p>
+                  <div id="cats" class="categories-grid"></div>
                 </div>
               </div>
-            </li>
-      
-            <!-- Nawabi Tawa Chicken -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="./assets/images/ChatGPT Image Nov 16, 2025, 11_56_01 PM.png" width="140" height="140" loading="lazy" alt="Nawabi Tawa Chicken" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Tawa Chicken</a></h3>
-                    <span class="span title-2">₹269 / ₹499</span>
+        
+              <!-- Main Content Panel -->
+              <div class="menu-main-content">
+                <div class="menu-panel panel" id="contentPanel">
+                  <div class="panel-header">
+                    <h2 class="headline-2" id="panelTitle">Welcome</h2>
+                    <div class="separator"></div>
                   </div>
-                  <p class="card-text label-1">
-                    Spicy, flavorful chicken cooked on a hot tawa with fresh herbs and Nawabi masala.
+                  
+                  <p class="panel-subtitle body-2" id="panelSub">
+                    Start by clicking <strong>Explore Menu</strong> then choose Vegetarian or Non-Vegetarian to begin.
                   </p>
+        
+                  <div class="menu-items-grid" id="itemsList">
+                    <!-- items will be injected here -->
+                  </div>
                 </div>
               </div>
-            </li>
-      
-            <!-- Nawabi Karahi Chicken -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="https://images.immediate.co.uk/production/volatile/sites/30/2024/12/Chicken-Karahi-847828f.jpg" width="140" height="140" loading="lazy" alt="Nawabi Karahi Chicken" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Karahi Chicken</a></h3>
-                    <span class="span title-2">₹269 / ₹499</span>
-                  </div>
-                  <p class="card-text label-1">
-                    Classic karahi-style chicken cooked with tomatoes, onion, and traditional Nawabi spices.
-                  </p>
-                </div>
-              </div>
-            </li>
-      
-            <!-- Nawabi Chicken Ishtu -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQymkoW91uZFjs-NCcZJH3NxFwvJaBn0UFYiIafSYfGT-VzOb_lcvGEY85xm8KrVmcBYp0&usqp=CAU" width="140" height="140" loading="lazy" alt="Nawabi Chicken Ishtu" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Chicken Ishtu</a></h3>
-                    <span class="span title-2">₹269 / ₹499</span>
-                  </div>
-                  <p class="card-text label-1">
-                    Mild, creamy and subtly spiced chicken stew inspired by traditional Nawabi kitchens.
-                  </p>
-                </div>
-              </div>
-            </li>
-      
-            <!-- Nawabi Chicken Changezi -->
-            <li>
-              <div class="menu-card hover:card">
-                <figure class="card-banner img-holder" style="width:140px;height:140px;border-radius:20px;overflow:hidden;">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCQIQMLy44EOvM6mSx63B9rfe1BB5cgt2dkAlNsgBp_d5iWokdLKnKta3iywBxmDGpAYc&usqp=CAU"  width="140" height="140" loading="lazy" alt="Nawabi Chicken Changezi" class="img-cover">
-                </figure>
-      
-                <div>
-                  <div class="title-wrapper">
-                    <h3 class="title-3"><a href="#" class="card-title">Nawabi Chicken Changezi</a></h3>
-                    <span class="span title-2">₹269 / ₹499</span>
-                  </div>
-                  <p class="card-text label-1">
-                    A royal Delhi-style chicken delicacy with creamy gravy and rich spices.
-                  </p>
-                </div>
-              </div>
-            </li>
-      
-          </ul>
-      
-          <p class="menu-text text-center">
-            Available daily from <span class="span">12:00 pm</span> to <span class="span">11:00 pm</span>
-          </p>
-      
+            </div>
+          </div>
         </div>
       </section>
       
